@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Certificate System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    
+
+    <section id="loginPage">
+
+        <div class="login-card">
+
+            <div class="logo">
+                🎓
+            </div>
+
+            <h1>Student Portal</h1>
+
+            <p class="subtitle">
+                Log in to access your certificate.
+            </p>
+
+            <form id="loginForm">
+
+                <label for="studentId">Student ID</label>
+
+                <input
+                    type="text"
+                    id="studentId"
+                    placeholder="Enter your Student ID"
+                    autocomplete="username"
+                    required
+                >
+
+                <label for="password">Password</label>
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter your password"
+                    autocomplete="current-password"
+                    required
+                >
+
+                <button type="submit" class="primary-btn">
+                    Login
+                </button>
+
+            </form>
+
+            <p id="loginMessage" class="message" aria-live="polite"></p>
+
+            <button
+                type="button"
+                id="verifyPageButton"
+                class="outline-btn"
+            >
+                Verify Certificate
+            </button>
+
+            <p class="small-text">
+                Student Certificate Management System
+            </p>
+
+        </div>
+
+    </section>
+
+
+    
+
+    <section id="editNamePage" class="hidden">
+
+        <div class="login-card">
+
+            <div class="logo">
+                ✍️
+            </div>
+
+            <h1>Confirm Your Name</h1>
+
+            <p class="subtitle">
+                Check your registered name before generating
+                your certificate.
+            </p>
+
+            <div class="notice">
+                <strong>Important:</strong>
+                You may change uppercase and lowercase letters,
+                but you cannot change your registered name to
+                another person's name.
+            </div>
+
+            <form id="editNameForm">
+
+                <label for="editedName">Your Registered Name</label>
+
+                <input
+                    type="text"
+                    id="editedName"
+                    placeholder="Enter your registered name"
+                    autocomplete="off"
+                    required
+                >
+
+                <p id="nameMessage" class="message" aria-live="polite"></p>
+
+                <button type="submit" class="primary-btn">
+                    Save Name and Continue
+                </button>
+
+            </form>
+
+            <button
+                type="button"
+                id="cancelEditButton"
+                class="outline-btn"
+            >
+                Cancel and Logout
+            </button>
+
+        </div>
+
+    </section>
+
+
+    
+
+    <section id="certificatePage" class="hidden">
+
+        <div class="certificate-container">
+
+            <div class="certificate">
+
+                <div class="certificate-content">
+
+                    <div class="certificate-logo">
+                        🎓
+                    </div>
+
+                    <h1 class="school-name">
+                        ABC UNIVERSITY
+                    </h1>
+
+                    <p class="school-description">
+                        OFFICIAL STUDENT CERTIFICATE
+                    </p>
+
+                    <div class="gold-divider"></div>
+
+                    <h2 class="certificate-heading">
+                        Certificate of Achievement
+                    </h2>
+
+                    <p class="certificate-intro">
+                        This certificate is proudly presented to
+                    </p>
+
+                    <h2
+                        id="certificateName"
+                        class="student-name"
+                    ></h2>
+
+                    <p class="certificate-description">
+                        For successfully completing the programme
+                    </p>
+
+                    <h3
+                        id="certificateCourse"
+                        class="course-name"
+                    ></h3>
+
+                    <p class="certificate-message">
+                        In recognition of dedication, commitment,
+                        and successful completion of the programme.
+                    </p>
+
+                    <div class="certificate-details">
+
+                        <div>
+                            <span>Student ID</span>
+
+                            <strong id="certificateStudentId"></strong>
+                        </div>
+
+                        <div>
+                            <span>Certificate Number</span>
+
+                            <strong id="certificateId"></strong>
+                        </div>
+
+                        <div>
+                            <span>Date Issued</span>
+
+                            <strong id="certificateDate"></strong>
+                        </div>
+
+                    </div>
+
+                    <div class="signatures">
+
+                        <div class="signature">
+
+                            <div class="signature-line"></div>
+
+                            <p>Registrar</p>
+
+                        </div>
+
+                        <div class="signature">
+
+                            <div class="signature-line"></div>
+
+                            <p>Director</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="certificate-buttons">
+
+                <button
+                    type="button"
+                    id="printButton"
+                    class="print-btn"
+                >
+                    Print Certificate
+                </button>
+
+                <button
+                    type="button"
+                    id="logoutButton"
+                    class="logout-btn"
+                >
+                    Logout
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    
+
+    <section id="verifyPage" class="hidden">
+
+        <div class="verify-container">
+
+            <div class="verify-card">
+
+                <div class="logo">
+                    🔎
+                </div>
+
+                <h1>Verify Certificate</h1>
+
+                <p class="subtitle">
+                    Enter a certificate number to check whether
+                    it exists in this demonstration.
+                </p>
+
+                <form id="verifyForm">
+
+                    <label for="verifyId">
+                        Certificate Number
+                    </label>
+
+                    <input
+                        type="text"
+                        id="verifyId"
+                        placeholder="e.g. CERT-ABC123"
+                        required
+                    >
+
+                    <button type="submit" class="primary-btn">
+                        Verify Certificate
+                    </button>
+
+                </form>
+
+                <div
+                    id="verifyResult"
+                    aria-live="polite"
+                ></div>
+
+                <button
+                    type="button"
+                    id="backToLoginButton"
+                    class="outline-btn"
+                >
+                    Back to Login
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
